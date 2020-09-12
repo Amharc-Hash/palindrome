@@ -20,26 +20,28 @@ int main()
 	return 0;
 }
 
-int	palindrome(char* s)
+int palindrome(char* s)
 {
-	int i = 0, palin = 0;
+	int palin = 0, i = 0;
 	if (strlen(s) % 2 == 1)
 	{
 		while (i != (strlen(s) - 1) / 2)
 		{
 			if (s[i] == s[strlen(s) - 1 - i])
 			{
-				return 1;
+				palin = 1;
 			}
 			else if (s[i] != s[strlen(s) - 1 - i])
 			{
-				return 0;
+				palin = 0;
+				break;
 			}
 			i++;
 		}
 	}
 	else
 	{
-		return 0;
+		palin = 0;
 	}
+	return palin;
 }
